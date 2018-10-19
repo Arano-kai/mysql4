@@ -18,7 +18,7 @@ if [ "$1" = 'mysqld_safe' ]; then
 		sleep 5
 		
 		#enable full network acess
-		mysql -Uroot mysql <<-EOS
+		mysql -u root mysql <<-EOS
 SET @@SESSION.SQL_LOG_BIN=0;
 DELETE FROM user where host in ('localhost','$HOSTNAME');
 GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY '${MYSQL_ROOT_PASSWORD}' WITH GRANT OPTION;
