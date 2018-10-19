@@ -12,7 +12,7 @@ sleep 5
 if ! ps -ef|grep "[m]ysqld" >/dev/null; then
 	echo "Stop OK!"
 else
-	echo "Stop failed!" 
+	echo "Stop failed!"
 	ps -ef|grep "[m]ysqld"
 fi
 :end

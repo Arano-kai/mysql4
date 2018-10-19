@@ -5,7 +5,6 @@
 mkdir -p /db /usr/local/src
 
 #make and install mysql4
-
 cd /usr/local/src/
 tar -xvzf /root/mysql-4.1.25.tar.gz
 cd mysql-4.1.25/
@@ -18,5 +17,3 @@ make clean
 cd /usr/local/mysql/
 chown -R root:mysql .
 chown -R mysql:mysql /db
-
-

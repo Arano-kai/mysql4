@@ -19,7 +19,6 @@ if [ -z "$DEBUG" ]; then
 	RUN="-d "
 else
 	RUN="--rm=true -it --entrypoint bash "
-
 fi
 
 #docker volumes on windows need this extra slash
@@ -27,9 +26,8 @@ if [ "$OSTYPE" = "msys" ]; then
 	P=/
 fi
 
-
 #stop existing container
-docker stop mysql4 >/dev/null 
+docker stop mysql4 >/dev/null
 docker rm mysql4 >/dev/null
 
 if [ "$DEBUG" = "clean" ]; then
@@ -52,4 +50,3 @@ docker run --name mysql4 \
 -p ${EXT_DB_PORT}:3306 \
 $RUN \
 tommi2day/mysql4
-
